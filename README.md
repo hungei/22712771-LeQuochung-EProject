@@ -30,14 +30,6 @@ The services communicate via REST over HTTP and publish/consume events on shared
 └── .github/workflows  # Continuous integration pipeline definition
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- [Node.js 18+](https://nodejs.org/) for running services locally and executing tests.
-- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) for containerised development.
-- (Optional) An existing MongoDB and RabbitMQ instance if you do not rely on Docker Compose.
-
 ### Environment configuration
 
 Each service reads its configuration from environment variables with sensible defaults:
