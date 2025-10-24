@@ -117,11 +117,6 @@ Pipeline nằm ở `.github/workflows/ci.yml`. Hiện workflow thực hiện:
 
 Lưu ý quan trọng: hiện workflow chạy `npm ci` ở root. Nếu tests nằm trong từng service và phụ thuộc vào packages trong `auth/package.json` hoặc `product/package.json`, workflow cần cài dependencies cho từng service hoặc cấu hình workspace để đảm bảo tests có đủ package.
 
-Nếu muốn, mình có thể giúp cập nhật workflow để:
-
-- cài `npm ci` trong từng service trước khi chạy test, hoặc
-- thiết lập npm workspaces để cài đồng bộ, hoặc
-- chạy MongoDB / RabbitMQ dưới dạng services trong job nếu test cần cơ sở dữ liệu/queue thật.
 
 ## Vấn đề thường gặp & gợi ý khắc phục
 
@@ -129,11 +124,3 @@ Nếu muốn, mình có thể giúp cập nhật workflow để:
 - Nếu tests cần MongoDB/RabbitMQ: thêm `services:` vào job hoặc chạy `docker compose up -d mongo rabbitmq` trước khi test và sử dụng `wait-on` để chờ.
 - Nếu Docker push thất bại: kiểm tra secrets `DOCKER_NAME` và `DOCKER_TOKEN` trong Settings -> Secrets.
 
-## Đóng góp
-
-- Mở issue hoặc pull request.
-- Trước khi PR: chạy tests cục bộ và đảm bảo pipeline CI chạy (nếu có thể).
-
----
-
-Nếu bạn muốn mình cập nhật file `.github/workflows/ci.yml` để cài deps per-service hoặc thêm DB services cho test, cho mình biết lựa chọn (ví dụ: "install per-service" hoặc "use docker-compose services") — mình sẽ cập nhật workflow sẵn sàng.
