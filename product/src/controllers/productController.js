@@ -110,11 +110,6 @@ class ProductController {
       res.status(500).json({ message: "Server error" });
     }
   }
-  async getProductsById(req , res, next){
-    const token = req.headers.authorization;
-    const products = await Product.findById(req.params.id);
-    res.status(200).json(products);
-  }
 }
 
 module.exports = ProductController;
