@@ -119,7 +119,6 @@ Lưu ý quan trọng: hiện workflow chạy `npm ci` ở root. Nếu tests nằ
 
 
 ## Vấn đề thường gặp & gợi ý khắc phục
-
 - Nếu tests fail vì không tìm module: chạy `npm install --prefix <service>` trong workflow trước khi test.
 - Nếu tests cần MongoDB/RabbitMQ: thêm `services:` vào job hoặc chạy `docker compose up -d mongo rabbitmq` trước khi test và sử dụng `wait-on` để chờ.
 - Nếu Docker push thất bại: kiểm tra secrets `DOCKER_NAME` và `DOCKER_TOKEN` trong Settings -> Secrets.
