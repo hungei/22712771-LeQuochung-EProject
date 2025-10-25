@@ -7,7 +7,7 @@
     "test": "mocha --timeout 20000 --recursive --exclude '**/node_modules/**' '**/*.test.js' --exit"
   },
   "keywords": [],
-  "author": "Tran Le Kiet",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "amqplib": "^0.10.3",
